@@ -18,7 +18,7 @@ if (!isset($_SESSION['user'])) {
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <style>
     body {
-        background-color: #000000; /* Hitam */
+        background-color: #98FB98; /* Hijau muda (pale green) */
         color: #FFFFFF; /* Putih untuk teks agar kontras */
     }
     .sb-topnav.navbar {

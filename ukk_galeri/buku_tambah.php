@@ -1,4 +1,4 @@
-<h1 class="mt-4">Petugas</h1>
+<h1 class="mt-4">Buku</h1>
 <div class="card">
     <div class="card-body">
     <div class="row">

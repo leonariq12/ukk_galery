@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2024 at 09:32 AM
+-- Generation Time: Oct 03, 2024 at 08:55 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -81,7 +81,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `email`, `level`) VALUES
 (5, 'Siswa 1', 'peminjam', '55f3894bc5fc71fead8412d321c2952c', 'peminjam@gmail.com', 'peminjam'),
-(9, 'ghuril', 'ghuril', '827ccb0eea8a706c4c34a16891f84e7b', 'rw.xo.ot.d@gmail.com', 'admin');
+(9, 'ghuril', 'ghuril', '827ccb0eea8a706c4c34a16891f84e7b', 'rw.xo.ot.d@gmail.com', 'admin'),
+(10, 'Therry', 'Leon', '6531401f9a6807306651b87e44c05751', 'therryleon12@gmail.com', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -137,7 +138,7 @@ ALTER TABLE `komentar`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

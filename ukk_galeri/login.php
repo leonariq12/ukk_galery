@@ -28,7 +28,7 @@
                 overflow: hidden; /* Menghindari konten keluar dari border */
             }
             .card-header {
-                background-color: #007bff; /* Warna header biru */
+                background-color: #800080; /* Warna header ungu */
                 color: white;
                 padding: 20px;
                 text-align: center;
@@ -39,7 +39,7 @@
                 box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan dalam */
             }
             .btn-primary {
-                background-color: #007bff; /* Warna tombol biru */
+                background-color: #800080; /* Warna header ungu */
                 border: none;
                 border-radius: 10px; /* Sudut yang lebih halus */
                 padding: 10px 20px; /* Spasi dalam tombol */
