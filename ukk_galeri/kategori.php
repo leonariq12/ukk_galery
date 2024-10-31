@@ -6,44 +6,46 @@
     <title>Kategori</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-            background-image: url('assets/img/bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            color: white; /* Mengubah warna teks menjadi putih */
+        }
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
         }
         .profile-card {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-            transition: transform 0.2s;
-        }
-        .profile-card:hover {
-            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
         }
         .btn-custom {
-            background-color: #ff4081;
+            background-color: #ff4081; 
             border: none;
-            transition: background-color 0.3s;
         }
         .btn-custom:hover {
             background-color: #e91e63;
-        }
-        .card-title {
-            font-weight: bold;
-        }
-        .card-text {
-            margin-bottom: 1rem;
-        }
-        .card-img-top {
-            border-radius: 15px 15px 0 0;
         }
     </style>
 </head>
 <body>
 
+<video autoplay muted loop>
+    <source src="assets/video/video.mp4" type="video/mp4"> <!-- Ganti dengan path video Anda -->
+    Your browser does not support the video tag.
+</video>
 <div class="container mt-4">
     <h1 class="mt-4 text-center">Kategori</h1>
     <div class="row">
@@ -54,9 +56,7 @@
                     <h5 class="card-title">SMKN 4 BOGOR</h5>
                     <p class="card-text">Deskripsi SMKN 4 BOGOR yang lebih mendalam.</p>
                     <ul>
-                        <li>Gambar Lingkungan Sekolah</li>
-                        <li>Gambar Gerbang Sekolah</li>
-                        <li>Gambar Gedung Sekolah</li>
+                        <li>Gambar Logo Sekolah</li>
                     </ul>
                     <a href="#" class="btn btn-custom" data-toggle="modal" data-target="#imageModal" data-image="assets/img/smkn4.jpg">Lihat Gambar</a>
                 </div>

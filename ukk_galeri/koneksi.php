@@ -1,3 +1,3 @@
 <?php
 session_start();
-$koneksi = mysqli_connect('localhost','root','','galeri_ukk');
+$koneksi = mysqli_connect('localhost','root','','leon_galery');

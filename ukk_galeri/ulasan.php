@@ -7,98 +7,94 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-image: url('assets/img/bg.jpg'); 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            color: white;
+            font-family: 'Roboto', sans-serif; /* Set font family */
+        }
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
         }
         .container {
             position: relative;
             z-index: 1;
-            padding: 20px;
-        }
-        h1, h2 {
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            padding-top: 20px;
         }
         .profile-card {
-            background-color: rgba(255, 255, 255, 0.9); 
+            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             margin-bottom: 15px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s, transform 0.5s;
-        }
-        .profile-card.show {
-            opacity: 1;
-            transform: translateY(0);
         }
         .btn-custom {
             background-color: #ff4081; 
             border: none;
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
         .btn-custom:hover {
-            background-color: #e91e63; 
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            background-color: #e91e63;
+        }
+        .btn-delete {
+            background-color: #f44336;
+            border: none;
+            color: white;
+            margin-top: 10px;
+        }
+        h1 {
+            margin-bottom: 20px; /* Add space below headings */
+        }
+        label {
+            margin-bottom: 5px; /* Add space below labels */
         }
     </style>
 </head>
 <body>
 
+<video autoplay muted loop>
+    <source src="assets/video/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 <div class="container mt-4">
-    <style>
-        .white-text {
-            color: white;
-        }
-    </style>
-
-    <h1 class="mt-4 white-text">Komentar</h1>
+    <h1 class="text-center">Komentar</h1>
 
     <div class="list-group" id="commentList">
-        <div class="profile-card show">
+        <div class="profile-card">
             <h5 class="mb-1">Fauzan Raja Budin</h5>
             <p class="mb-1">Komentar pertama dari Fauzan. Sangat menarik!</p>
             <small>Waktu: 01 Oktober 2024</small>
+            <button class="btn btn-delete" onclick="deleteComment(this)">Hapus</button>
         </div>
 
-        <div class="profile-card show">
+        <div class="profile-card">
             <h5 class="mb-1">Syahrial Sydik</h5>
             <p class="mb-1">Komentar kedua dari Aril. Saya setuju dengan pendapat ini.</p>
             <small>Waktu: 02 Oktober 2024</small>
+            <button class="btn btn-delete" onclick="deleteComment(this)">Hapus</button>
         </div>
     </div>
 
-    <h1 class="mt-4 white-text">Tambahkan Komentar</h1>
+    <h1 class="text-center">Tambahkan Komentar</h1>
 
     <form id="commentForm">
         <div class="form-group">
-        <style>
-    .white-text {
-        color: white;
-    }
-</style>
-
-<label for="name" class="white-text">Nama:</label>
-
+            <label for="name">Nama:</label>
             <input type="text" class="form-control" id="name" required>
         </div>
         <div class="form-group">
-        <style>
-    .white-text {
-        color: white;
-    }
-</style>
-
-<label for="name" class="white-text">Komentar:</label>
-
+            <label for="comment">Komentar:</label>
             <textarea class="form-control" id="comment" rows="3" required></textarea>
         </div>
-        <button type="submit" class="btn btn-custom">Kirim</button>
+        <button type="submit" class="btn btn-custom btn-block">Kirim</button>
     </form>
 </div>
 
@@ -119,19 +115,20 @@
             <h5 class="mb-1">${name}</h5>
             <p class="mb-1">${comment}</p>
             <small>Waktu: ${new Date().toLocaleString()}</small>
+            <button class="btn btn-delete" onclick="deleteComment(this)">Hapus</button>
         `;
 
         commentList.appendChild(newComment);
-
-        // Menambahkan efek transisi
-        setTimeout(() => {
-            newComment.classList.add('show');
-        }, 10); // Menunggu sebentar agar efek terlihat
 
         // Reset form fields
         document.getElementById('name').value = '';
         document.getElementById('comment').value = '';
     });
+
+    function deleteComment(button) {
+        const commentCard = button.parentElement; // Get the parent profile-card
+        commentCard.remove(); // Remove the comment card from the DOM
+    }
 </script>
 </body>
 </html>

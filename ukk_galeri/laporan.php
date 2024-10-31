@@ -6,29 +6,46 @@
     <title>Profile</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-            background-image: url('assets/img/bg.jpg'); /* Ganti dengan path gambar latar belakang Anda */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white; /* Mengubah warna teks agar kontras dengan latar belakang */
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            color: white; /* Mengubah warna teks menjadi putih */
+        }
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
         }
         .profile-card {
-            background-color: rgba(0, 0, 0, 0.7); /* Warna latar belakang setengah transparan */
+            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
         }
         .btn-custom {
-            background-color: #ff4081; /* Warna tombol khusus */
+            background-color: #ff4081; 
             border: none;
         }
         .btn-custom:hover {
-            background-color: #e91e63; /* Warna tombol saat hover */
+            background-color: #e91e63;
         }
     </style>
 </head>
 <body>
+
+<video autoplay muted loop>
+    <source src="assets/video/video.mp4" type="video/mp4"> <!-- Ganti dengan path video Anda -->
+    Your browser does not support the video tag.
+</video>
 
 <div class="container mt-4">
     <h1 class="mt-4 text-center">Profile</h1>
